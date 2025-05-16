@@ -1,0 +1,4 @@
+(library
+ (name echo)
+ (public_name echo)
+ (libraries base stdio unix fmt))
