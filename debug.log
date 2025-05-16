@@ -1,5 +1,0 @@
-13:10:37 TRACE Checking sync state for 'documents/' (42 files)
-13:10:37 INFO  Starting sync from '/home/user/docs' to '/backup/docs'
-13:10:37 WARN  File 'notes_old.txt' is 120 days old, skipping...
-13:10:37 ERROR Failed to sync 'report.pdf': Permission denied
-13:10:37 FATAL Aborting sync: required path '/mnt/backup' not found
