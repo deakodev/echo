@@ -20,7 +20,7 @@
  (synopsis "A bare-bones logging library for OCaml")
  (description "Echo is a lightweight logging library for OCaml that supports colorized, printf-style output with structured log levels.")
  (depends 
-  "ocaml" "base" "stdio" "unix" "fmt")
+  "ocaml" "base" "stdio" "unix" "fmt" "ctypes" "ctypes-foreign")
  (tags
   ("logging" "console")))
 

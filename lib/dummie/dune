@@ -1,0 +1,5 @@
+(library
+ (name dummie)
+ (modules dummie)
+ (foreign_stubs (language c) (names dummie))
+ (libraries echo))

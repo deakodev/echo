@@ -1,4 +1,11 @@
 (library
  (name echo)
  (public_name echo)
- (libraries base stdio unix fmt))
+ (modules echo echo_log)
+ (foreign_archives echo_stubs)
+ (libraries base stdio unix fmt ctypes.foreign))
+
+(foreign_library
+ (archive_name echo_stubs)
+ (language c)
+ (names echo_stubs))

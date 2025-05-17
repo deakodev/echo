@@ -17,6 +17,8 @@ depends: [
   "stdio"
   "unix"
   "fmt"
+  "ctypes"
+  "ctypes-foreign"
   "odoc" {with-doc}
 ]
 build: [
