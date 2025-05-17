@@ -2,7 +2,7 @@
 
 static void (*echo_trace_fn)(void) = NULL;
 
-void echo_trace_register(void (*cb)(void)) 
+void echo_register(void (*cb)(void)) 
 {
     echo_trace_fn = cb;
 }

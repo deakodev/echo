@@ -12,7 +12,7 @@ let fatal fmt = log Fatal fmt
 let cb_type = funptr (void @-> returning void)
 
 (* Bind the registration function *)
-let register = foreign "echo_trace_register" (cb_type @-> returning void)
+let register = foreign "echo_register" (cb_type @-> returning void)
 
 (* OCaml callback function *)
 let my_trace_cb () = trace "[C] echo_trace called from renderer!"
