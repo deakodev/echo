@@ -1,4 +1,5 @@
 open Foreign
+open Ctypes
 open Ctypes_static
 include Echo_log
 
@@ -9,11 +10,11 @@ let error fmt = log Error fmt
 let fatal fmt = log Fatal fmt
 
 (* The type of the callback *)
-let cb_type = funptr (void @-> returning void)
+let cb_type = funptr (string @-> returning void)
 
 (* Bind the registration function *)
-let register = foreign "echo_register" (cb_type @-> returning void)
+let register = foreign "echo_register" (int @-> cb_type @-> returning void)
 
 (* OCaml callback function *)
-let my_trace_cb () = trace "[C] echo_trace called from renderer!"
-let () = register (fun () -> my_trace_cb ())
+let my_trace_cb fmt = trace "%s" fmt
+let () = register 0 my_trace_cb

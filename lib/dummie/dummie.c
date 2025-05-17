@@ -4,6 +4,7 @@
 
 void dummie_c_fn() 
 {
-    echo_trace();
+    echo_trace("hello!"); 
+    echo_trace("%d - %s", 7, "lucky");
 }
  
