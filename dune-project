@@ -2,7 +2,7 @@
 
 (name echo)
 
-(version 0.0.1)
+(version 0.0.2)
 
 (generate_opam_files true)
 
@@ -21,10 +21,14 @@
  (synopsis 
   "A minimal interop OCaml + C logging solution")
  (description 
-  "Echo is a lightweight logging library for OCaml with C lib bindings, allowing both OCaml and C code to emit structured log messages through a unified logging interface")
+  "Echo is a lightweight logging library for OCaml with C lib bindings, allowing both OCaml and C code to emit structured log messages through a unified logging interface.")
  (depends 
-  "ocaml" "base" "stdio" "fmt" "ctypes" "ctypes-foreign" "alcotest")
+  (ocaml (">= 4.14"))
+  base
+  stdio
+  (fmt (>= 0.8.10))
+  (ctypes (>= 0.20.0))
+  ctypes-foreign
+  alcotest)
  (tags
   ("logging" "console")))
-
-; See the complete stanza docs at https://dune.readthedocs.io/en/stable/reference/dune-project/index.html
