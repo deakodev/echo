@@ -2,7 +2,7 @@
 
 (name echo)
 
-(version 0.0.2)
+(version 0.0.3)
 
 (generate_opam_files true)
 
@@ -23,7 +23,7 @@
  (description 
   "Echo is a lightweight logging library for OCaml with C lib bindings, allowing both OCaml and C code to emit structured log messages through a unified logging interface.")
  (depends 
-  (ocaml (">= 4.14"))
+  (ocaml (>= 4.14))
   base
   stdio
   (fmt (>= 0.8.10))
