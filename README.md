@@ -1,6 +1,6 @@
 # Echo
 
-Echo is a lightweight and extensible logging library for OCaml with C bindings, allowing both OCaml and C code to emit structured log messages through a unified logging interface.
+Echo is a lightweight logging library for OCaml with C lib bindings, allowing both OCaml and C code to emit structured log messages through a unified logging interface.
 
 ![OCaml and C logging to the terminal](echo.png)
 
@@ -11,9 +11,33 @@ Echo is a lightweight and extensible logging library for OCaml with C bindings, 
 - Standard log levels: `TRACE`, `INFO`, `WARN`, `ERROR`, `FATAL`
 - Manual flushing of logs
 
----
+## API Overview
 
-## Usage
+### OCaml
+
+```ocaml
+val set_out : out_type -> unit
+val trace : ('a, unit, string, unit) format4 -> 'a
+val info : ('a, unit, string, unit) format4 -> 'a
+val warn : ('a, unit, string, unit) format4 -> 'a
+val error : ('a, unit, string, unit) format4 -> 'a
+val fatal : ('a, unit, string, unit) format4 -> 'a
+val flush : unit -> unit
+```
+
+### C
+
+Don't forget to #include <echo.h>
+
+```c
+void echo_trace(const char *fmt, ...);
+void echo_info(const char *fmt, ...);
+void echo_warn(const char *fmt, ...);
+void echo_error(const char *fmt, ...);
+void echo_fatal(const char *fmt, ...);
+```
+
+## Example Usage
 
 ### In OCaml
 
@@ -49,41 +73,9 @@ void dummie_c_fn()
 }
 ```
 
----
-
-## API Overview
-
-### OCaml
-
-```ocaml
-val set_out : out_type -> unit
-val trace : ('a, unit, string, unit) format4 -> 'a
-val info : ('a, unit, string, unit) format4 -> 'a
-val warn : ('a, unit, string, unit) format4 -> 'a
-val error : ('a, unit, string, unit) format4 -> 'a
-val fatal : ('a, unit, string, unit) format4 -> 'a
-val flush : unit -> unit
-```
-
-### C
-
-Don't forget #include <echo.h>
-
-```c
-void echo_trace(const char *fmt, ...);
-void echo_info(const char *fmt, ...);
-void echo_warn(const char *fmt, ...);
-void echo_error(const char *fmt, ...);
-void echo_fatal(const char *fmt, ...);
-```
-
----
-
 ## License
 
 MIT License — free to use, modify, and distribute.
-
----
 
 ## Contributions
 
