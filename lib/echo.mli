@@ -1,8 +1,8 @@
 (** The type of output destinations for log messages. *)
 type out_type =
-  | Stdout           (** Write logs to standard output *)
-  | Stderr           (** Write logs to standard error *)
-  | File of string   (** Write logs to a file with the given filename + Stdout/Stderr *)
+  | Stdout           (* Write logs to standard output *)
+  | Stderr           (* Write logs to standard error *)
+  | File of string   (* Write logs to a file with the given filename + Stdout/Stderr *)
 
 (** [set_out destination] sets the output destination for subsequent log messages.
     If not called, logging defaults to a system-defined output (e.g., stdout). *)
