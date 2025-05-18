@@ -2,10 +2,10 @@
 
 void dummie_c_fn() 
 {
-    echo_trace("message");
-    echo_info("message");
-    echo_warn("message");
-    echo_error("message");
-    echo_fatal("message");
+    echo_trace("%s", "message");
+    echo_info("%s", "message");
+    echo_warn("%s", "message");
+    echo_error("%s", "message");
+    echo_fatal("%s", "message");
 }
  

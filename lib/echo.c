@@ -5,6 +5,22 @@
 
 #define ECHO_MSG_BUF_SIZE 1024
 
+enum Level {
+    Trace = 0,
+    Info,
+    Warn,
+    Error,
+    Fatal,
+    Level_Count
+};
+
+// Tuple like struct to map Level to echo callback
+typedef struct {
+    Level level;
+    echo_cb cb;
+} LevelCallback;
+
+
 // Registry of callbacks indexed by Level
 static LevelCallback level_registry[Level_Count] = {
     { Trace, NULL },

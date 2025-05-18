@@ -59,6 +59,7 @@ let log level fmt =
       | None -> ())
     fmt
 
+(* this is mainly for flushing during testing, but made public *)
 let flush () =
   match !out_file with
   | Some oc -> Out_channel.flush oc

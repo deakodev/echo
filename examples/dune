@@ -2,3 +2,4 @@
  (name main)
  (modules main)
  (libraries echo dummie))
+ ;; if you have a bound c lib eg. dummie, make sure to include echo in that dune file too

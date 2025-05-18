@@ -4,5 +4,4 @@
  (foreign_stubs 
   (language c) 
   (names dummie))
- (libraries echo)
- (flags :standard -linkall))
+ (libraries echo))
