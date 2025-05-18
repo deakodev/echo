@@ -1,7 +1,6 @@
 #include "echo.h"
 
 #include <stdio.h>
-#include <assert.h>
 #include <stdarg.h>
 
 #define ECHO_MSG_BUF_SIZE 1024
@@ -44,7 +43,7 @@ static void echo_logf(Level level, const char *fmt, va_list args)
     }
 }
 
-// Pubic C API for logging at different levels
+// Pubic variadic c api for logging at different levels
 #define DEFINE_ECHO_FN(name, level)                \
     void name(const char *fmt, ...) {              \
         va_list args;                              \
@@ -59,3 +58,4 @@ DEFINE_ECHO_FN(echo_warn, Warn)
 DEFINE_ECHO_FN(echo_error, Error)
 DEFINE_ECHO_FN(echo_fatal, Fatal)
 
+void _echo_force_link(void) {}

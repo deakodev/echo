@@ -46,13 +46,11 @@ let prefixes level =
   let time = time () in
   let attributes = level_attributes level in
   let plain = time ^ attributes.name ^ " " in
-  let colored =
-    level_attributes level |> level_colorize |> Fmt.str "%s%s " time
-  in
+  let colored = attributes |> level_colorize |> Fmt.str "%s%s " time in
   (plain, colored)
 
 let log level fmt =
-  Caml.Printf.ksprintf
+  Printf.ksprintf
     (fun body ->
       let plain, colored = prefixes level in
       Out_channel.output_string !out_channel (colored ^ body ^ "\n");
@@ -60,3 +58,8 @@ let log level fmt =
       | Some ch -> Out_channel.output_string ch (plain ^ body ^ "\n")
       | None -> ())
     fmt
+
+let flush () =
+  match !out_file with
+  | Some oc -> Out_channel.flush oc
+  | None -> Out_channel.flush !out_channel

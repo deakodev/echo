@@ -1,6 +1,7 @@
 let () =
   Echo.set_out (File "debug.log");
-  Echo.trace "Checking sync state for '%s' (%d files)" "documents/" 42;
+  Echo.trace "Checking sync state for '%s' (%d files) %0.2f" "documents/" 42
+    34.4;
   Echo.info "Starting sync from '%s' to '%s'" "/home/user/docs" "/backup/docs";
 
   Dummie.dummie_c_fn ();

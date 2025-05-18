@@ -15,10 +15,10 @@ depends: [
   "ocaml"
   "base"
   "stdio"
-  "unix"
   "fmt"
   "ctypes"
   "ctypes-foreign"
+  "alcotest"
   "odoc" {with-doc}
 ]
 build: [

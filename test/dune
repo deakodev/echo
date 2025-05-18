@@ -1,2 +1,4 @@
 (test
- (name test_echo))
+ (name test_echo)
+ (modules test_echo)
+ (libraries echo dummie alcotest str))
