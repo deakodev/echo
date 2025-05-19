@@ -2,7 +2,7 @@
 
 (name echo)
 
-(version 0.0.3)
+(version 0.0.4)
 
 (generate_opam_files true)
 
