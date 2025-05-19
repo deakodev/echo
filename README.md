@@ -11,6 +11,16 @@ Echo is a lightweight logging library for OCaml with C lib bindings, allowing bo
 - Standard log levels: `TRACE`, `INFO`, `WARN`, `ERROR`, `FATAL`
 - Manual flushing of logs
 
+## Installation
+
+Echo can be installed with `opam`:
+
+```bash
+opam install echo
+```
+
+`opam` package page: https://opam.ocaml.org/packages/echo
+
 ## API Overview
 
 ### OCaml
