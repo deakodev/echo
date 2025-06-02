@@ -16,8 +16,6 @@ let test_ocaml_logging () =
   Echo.error "message";
   Echo.fatal "message";
 
-  Echo.flush ();
-
   check_log_contains ~msg:"Ocaml TRACE" "TRACE message";
   check_log_contains ~msg:"Ocaml INFO" "INFO  message";
   check_log_contains ~msg:"Ocaml WARN" "WARN  message";
@@ -27,8 +25,6 @@ let test_ocaml_logging () =
 let test_c_logging () =
   Echo.set_out (File "test.log");
   Dummie.dummie_c_fn ();
-
-  Echo.flush ();
 
   check_log_contains ~msg:"C TRACE" "TRACE [C] message";
   check_log_contains ~msg:"C INFO" "INFO  [C] message";

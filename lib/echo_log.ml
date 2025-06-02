@@ -54,13 +54,10 @@ let log level fmt =
     (fun body ->
       let plain, colored = prefixes level in
       Out_channel.output_string !out_channel (colored ^ body ^ "\n");
+      Out_channel.flush !out_channel;
       match !out_file with
-      | Some ch -> Out_channel.output_string ch (plain ^ body ^ "\n")
+      | Some ch ->
+          Out_channel.output_string ch (plain ^ body ^ "\n");
+          Out_channel.flush ch
       | None -> ())
     fmt
-
-(* this is mainly for flushing during testing, but made public *)
-let flush () =
-  match !out_file with
-  | Some oc -> Out_channel.flush oc
-  | None -> Out_channel.flush !out_channel

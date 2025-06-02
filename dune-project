@@ -4,9 +4,10 @@
 
 (version 0.0.4)
 
-(generate_opam_files true)
+(generate_opam_files false)
 
-(source (github deakodev/echo))
+(source
+ (github deakodev/echo))
 
 (authors "Zachary Deak <deakodev@outlook.com>")
 
@@ -18,16 +19,18 @@
 
 (package
  (name echo)
- (synopsis 
-  "A minimal interop OCaml + C logging solution")
- (description 
+ (synopsis "A minimal interop OCaml + C logging solution")
+ (description
   "Echo is a lightweight logging library for OCaml with C lib bindings, allowing both OCaml and C code to emit structured log messages through a unified logging interface.")
- (depends 
-  (ocaml (>= 4.14))
+ (depends
+  (ocaml
+   (>= 4.14))
   base
   stdio
-  (fmt (>= 0.8.10))
-  (ctypes (>= 0.20.0))
+  (fmt
+   (>= 0.8.10))
+  (ctypes
+   (>= 0.20.0))
   ctypes-foreign
   alcotest)
  (tags

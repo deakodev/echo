@@ -9,3 +9,7 @@
  (archive_name echo)
  (language c)
  (names echo))
+
+(install
+ (section lib)
+ (files echo.h))
