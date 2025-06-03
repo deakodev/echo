@@ -3,7 +3,7 @@
  (public_name echo)
  (modules echo echo_log)
  (foreign_archives echo)
- (libraries base stdio unix fmt ctypes.foreign))
+ (libraries base stdio unix fmt ctypes ctypes-foreign))
 
 (foreign_library
  (archive_name echo)

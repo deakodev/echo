@@ -12,7 +12,7 @@ homepage: "https://github.com/deakodev/echo"
 doc: "https://github.com/deakodev/echo"
 bug-reports: "https://github.com/deakodev/echo/issues"
 depends: [
-  "dune" {>= "3.17"}
+  "dune" {>= "3.18"}
   "ocaml" {>= "4.14"}
   "base"
   "stdio"
@@ -37,3 +37,4 @@ build: [
   ]
 ]
 dev-repo: "git+https://github.com/deakodev/echo.git"
+x-maintenance-intent: ["(latest)"]
