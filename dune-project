@@ -2,9 +2,9 @@
 
 (name echo)
 
-(version 0.0.6)
+(version 0.0.7)
 
-(generate_opam_files true)
+(generate_opam_files false)
 
 (source
  (github deakodev/echo))
