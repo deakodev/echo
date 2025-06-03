@@ -2,7 +2,7 @@
 
 (name echo)
 
-(version 0.0.7)
+(version 0.0.5)
 
 (generate_opam_files false)
 
@@ -31,7 +31,8 @@
    (>= 0.8.10))
   (ctypes
    (>= 0.20.0))
-  ctypes-foreign
+  (ctypes-foreign
+   (>= 0.23.0))
   alcotest)
  (tags
   ("logging" "console")))
