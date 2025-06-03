@@ -9,6 +9,7 @@ let check_log_contains ~msg expected =
   Alcotest.(check bool msg true (log_contains expected log))
 
 let test_ocaml_logging () =
+  Out_channel.write_all "test.log" ~data:"";
   Echo.set_out (File "test.log");
   Echo.trace "message";
   Echo.info "message";
@@ -23,6 +24,7 @@ let test_ocaml_logging () =
   check_log_contains ~msg:"Ocaml FATAL" "FATAL message"
 
 let test_c_logging () =
+  Out_channel.write_all "test.log" ~data:"";
   Echo.set_out (File "test.log");
   Dummie.dummie_c_fn ();
 

@@ -25,10 +25,17 @@ even if none of its symbols are directly used from OCaml (eg. if the user just u
 Without this, the linker might discard the C object file, and the callbacks wouldn't be registered at runtime. *)
 external force_link : unit -> unit = "_echo_force_link"
 
+(* OCaml 5.3 (and earlier) may GC closures passed to C unless retained.
+   These callbacks must be kept alive to avoid CallToExpiredClosure errors. *)
+let _callbacks : (int * (string -> unit)) list =
+  [
+    (0, echo_trace_cb);
+    (1, echo_info_cb);
+    (2, echo_warn_cb);
+    (3, echo_error_cb);
+    (4, echo_fatal_cb);
+  ]
+
 let () =
   force_link ();
-  register 0 echo_trace_cb;
-  register 1 echo_info_cb;
-  register 2 echo_warn_cb;
-  register 3 echo_error_cb;
-  register 4 echo_fatal_cb
+  List.iter (fun (lvl, cb) -> register lvl cb) _callbacks

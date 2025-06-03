@@ -9,7 +9,10 @@ let out_file = ref None
 let set_out = function
   | Stdout -> out_channel := Out_channel.stdout
   | Stderr -> out_channel := Out_channel.stderr
-  | File path -> out_file := Some (Out_channel.create path)
+  | File path ->
+      (match !out_file with Some ch -> Out_channel.close ch | None -> ());
+      let ch = Out_channel.create path in
+      out_file := Some ch
 
 type color = Blue | Cyan | Green | Magenta | Red | White | Yellow
 type attributes = { name : string; color : color }

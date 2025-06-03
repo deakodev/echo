@@ -1,10 +1,10 @@
-(lang dune 3.18)
+(lang dune 3.17)
 
 (name echo)
 
-(version 0.0.4)
+(version 0.0.6)
 
-(generate_opam_files false)
+(generate_opam_files true)
 
 (source
  (github deakodev/echo))
